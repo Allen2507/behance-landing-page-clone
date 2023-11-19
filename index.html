@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Behance-Clone®</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <nav class="site-nav">
+          <div class="logo">Behance-Clone®</div>
+        </nav>
+      </div>
+      <div class="header-right">
+        <nav class="user-nav">
+          <a href="#">Log in</a>
+          <a class="primary" href="#">Sign up</a>
+        </nav>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          placeholder="Search the gallery"
+          oninput="handleInput(this.value)"
+        />
+        <div class="autocomplete" id="autocomplete"></div>
+        <div class="dropdown">
+          <button class="dropbtn">Select Option</button>
+          <div class="dropdown-content">
+            <a href="#">Recommended</a>
+            <a href="#">Most Viewed</a>
+            <a href="#">Most Liked</a>
+            <a href="#">Most Relevant</a>
+            <a href="#">Most Discussed</a>
+            <a href="#">Most Recent </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="gallery">
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/pencil.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>UI Wireframe Saturday</h4>
+              <h5>Med Badr Chemmaoui</h5>
+            </div>
+            <div class="stats">
+              <div class="views">1004 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/domenico.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Computer Setup Concept</h4>
+              <h5>Domenico</h5>
+            </div>
+            <div class="stats">
+              <div class="views">8412 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/neven.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Drawing</h4>
+              <h5>Neven</h5>
+            </div>
+            <div class="stats">
+              <div class="views">44,241 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart"><svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/ux-indonesia.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Wireframes and Post-its</h4>
+              <h5>UX Indonesia</h5>
+            </div>
+            <div class="stats">
+              <div class="views">1452 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/ux-store.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Top Down</h4>
+              <h5>Unsplash</h5>
+            </div>
+            <div class="stats">
+              <div class="views">21,200 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart"><svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/john-jennings.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Poster Board Background</h4>
+              <h5>John Jennings</h5>
+            </div>
+            <div class="stats">
+              <div class="views">10,040 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart"><svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/pencil.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>UI Wireframe Saturday</h4>
+              <h5>Med Badr Chemmaoui</h5>
+            </div>
+            <div class="stats">
+              <div class="views">1004 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/domenico.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Computer Setup Concept</h4>
+              <h5>Domenico</h5>
+            </div>
+            <div class="stats">
+              <div class="views">8412 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/neven.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Drawing</h4>
+              <h5>Neven</h5>
+            </div>
+            <div class="stats">
+              <div class="views">44,241 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart"><svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/ux-indonesia.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Wireframes and Post-its</h4>
+              <h5>UX Indonesia</h5>
+            </div>
+            <div class="stats">
+              <div class="views">1452 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart">
+                <svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/ux-store.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Top Down</h4>
+              <h5>Unsplash</h5>
+            </div>
+            <div class="stats">
+              <div class="views">21,200 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart"><svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img" src="images/thumbnails/john-jennings.jpg" />
+          <div class="card-footer">
+            <div class="title">
+              <h4>Poster Board Background</h4>
+              <h5>John Jennings</h5>
+            </div>
+            <div class="stats">
+              <div class="views">10,040 views</div>
+            </div>
+            <button class="like-btn" onclick="toggleLike(this)">
+              <span class="heart"><svg
+                  width="30px"
+                  height="30px"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z"
+                    stroke="#000000"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"/>
+                  </svg></span>
+              Like
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div id="image-modal" class="modal hidden">
+      <div class="modal-body">
+        <div class="modal-content">
+          <button class="close-button">X</button>
+          <img id="modal-image" src="images/img/pencil.jpg" />
+        </div>
+      </div>
+      <div class="modal-overlay"></div>
+    </div>
+    <footer>
+      Design by <a href="https://github.com/Allen2507">Allen Joshua</a>.
+    </footer>
+    <script src="js/main.js"></script>
+    <script src="/js/suggestionlist.js"></script>
+  </body>
+</html>
